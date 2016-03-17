@@ -1,0 +1,8 @@
+name = Greyhead Customisations
+description = Little tweaks and adjustments for Greyhead websites.
+core = 7.x
+version = "7.x-0.1"
+
+files[] = greyheadcustomisations.module
+project = Greyhead Design Ltd - greyhead.co.uk
+scripts[] = js/greyhead_customisations.js
