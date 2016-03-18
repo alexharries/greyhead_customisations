@@ -730,7 +730,7 @@ function greyhead_customisations_highlight_overridden_form_fields(&$form_array, 
       case 'greyhead_configuration':
         // If context is greyhead config, get the config array.
         $greyhead_configuration = variable_get('greyhead_configuration', array());
-        $overridden_variables_data = $greyhead_configuration['overridden_variables'];
+        $overridden_variables_data = isset($greyhead_configuration['overridden_variables']) ? $greyhead_configuration['overridden_variables'] : array();
         break;
 
       case 'strongarm':
