@@ -396,19 +396,13 @@ function greyhead_customisations_menu() {
 function greyhead_customisations_permission() {
   $permissions = array(
     'administer greyhead customisations' => array(
-      'title' => t('Administer Four Communications Customisations'),
-      'description' => t('Additional options for configuring your Drupal website, provided by Four Communications.'),
+      'title' => t('Administer Greyhead Customisations'),
+      'description' => t('Additional options for configuring your Drupal website.'),
     ),
   );
 
   return $permissions;
 }
-
-/**
- * Constant definitions.
- */
-define('GREYHEAD_CUSTOMISATIONS_REDIRECTED_FROM_NIACE_TEXT_DEFAULT', 'You have been redirected to this page because the NIACE website has become the Learning &amp; Work Institute. While we have tried to make sure that the content on this page will provide you with the information you need, if it doesn\'t, please try <a href="/search">searching for the information you need</a>, or <a href="/">visit our new homepage</a>.');
-define('GREYHEAD_CUSTOMISATIONS_REDIRECTED_FROM_CESI_TEXT_DEFAULT', 'You have been redirected to this page because the Inclusion website has become the Learning &amp; Work Institute. While we have tried to make sure that the content on this page will provide you with the information you need, if it doesn\'t, please try <a href="/search">searching for the information you need</a>, or <a href="/">visit our new homepage</a>.');
 
 /**
  * Returns a system settings form.
@@ -596,7 +590,7 @@ function greyhead_customisations_create_dynamic_scale_and_crop($width, $height) 
     // Create and save the style.
     $style = image_style_save(array(
       'name' => $name,
-      'label' => 'Four Communications dynamic scale and crop (' . $width . ' x ' . $height . ')',
+      'label' => 'Greyhead dynamic scale and crop (' . $width . ' x ' . $height . ')',
     ));
 
     $effect = array(

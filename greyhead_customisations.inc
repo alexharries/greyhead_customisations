@@ -600,38 +600,6 @@ function gdpm($variable = NULL, $label = NULL) {
 }
 
 /**
- * Checks whether the URL includes a ?redirectedfrom=cesi/niace value.
- *
- * If it does, we display a message (if configured) and remove the
- * ?redirectedfrom= part of the URL.
- */
-function greyhead_customisations_check_for_inclusion_redirect() {
-  // Loop through each of our $_GET variaboos.
-  foreach ($_GET as $key => $value) {
-    // Does the key (i.e. the part before the equals sign) begin
-    // "redirectedFrom"? Case-insensitive comparison.
-    if (strtolower(substr($key, 0, strlen('redirectedfrom'))) == 'redirectedfrom') {
-      // Is it from NIACE?
-      if (strtolower($value) == 'niace') {
-        // Set the NIACE message.
-        drupal_set_message(variable_get('greyhead_customisations_redirected_from_niace_text', GREYHEAD_CUSTOMISATIONS_REDIRECTED_FROM_NIACE_TEXT_DEFAULT), 'status', FALSE);
-      }
-
-      // Is it from CESI?
-      if (strtolower($value) == 'cesi') {
-        // Set the CESI message.
-        drupal_set_message(variable_get('greyhead_customisations_redirected_from_cesi_text', GREYHEAD_CUSTOMISATIONS_REDIRECTED_FROM_CESI_TEXT_DEFAULT), 'status', FALSE);
-      }
-
-      // If it's from somewhere else, we just redirect without a message.
-
-      // Redirect to $_GET['q'] remove the ?redirectedfrom part of the URL.
-      drupal_goto($_GET['q']);
-    }
-  }
-}
-
-/**
  * Add iconifier.net icons to a page.
  *
  * @param $path_to_icons        string The path to the icons, relative to the Drupal
