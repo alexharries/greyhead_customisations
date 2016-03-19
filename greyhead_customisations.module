@@ -50,9 +50,6 @@ function greyhead_customisations_init() {
   ) {
     drupal_add_js(drupal_get_path('module', 'greyhead_customisations') . '/js/greyhead_customisations_workbench_access_tweaks.js', 'file');
   }
-
-  // Check whether the URL has a ?redirectedFromXX= value.
-  greyhead_customisations_check_for_inclusion_redirect();
 }
 
 /**
