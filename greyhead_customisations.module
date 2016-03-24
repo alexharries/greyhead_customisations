@@ -673,6 +673,8 @@ function greyhead_customisations_clone_node_alter(&$node, $context) {
  */
 function greyhead_customisations_node_presave($node) {
   if (module_exists('geocoder')) {
-    db_truncate('cache_geocoder')->execute();
+    if (db_table_exists('cache_geocoder')) {
+      db_truncate('cache_geocoder')->execute();
+    }
   }
 }
