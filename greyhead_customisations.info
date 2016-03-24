@@ -1,8 +1,10 @@
 name = Greyhead Customisations
 description = Little tweaks and adjustments for Greyhead websites.
 core = 7.x
-version = "7.x-0.1"
+version = "7.x-1.0-20160318"
 
-files[] = greyheadcustomisations.module
+files[] = greyhead_customisations.inc
+files[] = greyhead_customisations.user_role_utilities.inc
+
 project = Greyhead Design Ltd - greyhead.co.uk
 scripts[] = js/greyhead_customisations.js
