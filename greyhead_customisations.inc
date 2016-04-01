@@ -840,3 +840,22 @@ function greyhead_customisations_highlight_overridden_form_fields(&$form_array, 
 function greyhead_customisations_normalise_line_endings($text) {
   return preg_replace('~(*BSR_ANYCRLF)\R~', "\r\n", $text);
 }
+
+/**
+ * Gets the Do Not Track setting from a client web browser.
+ *
+ * Code from
+ * https://developer.mozilla.org/en-US/docs/Web/Security/Do_not_track_field_guide/Tutorials/1_Reading_the_DNT_header
+ * with love and hugs 'n stuff.
+ *
+ * @return bool TRUE if the client browser sent a DNT header.
+ */
+function greyhead_customisations_do_not_track_status() {
+  // Handy to have as a function because you may use this a lot.
+  // The important logic here is: Dnt can be on (1), off (0), or
+  // unset. You want to make sure you account for unset so you do
+  // not de-reference a null pointer somewhere in your code.
+  // returns TRUE if Dnt is on and is equal to 1,
+  // returns FALSE if Dnt is unset or not equal to 1.
+  return (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1);
+}
