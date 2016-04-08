@@ -765,14 +765,17 @@ function greyhead_customisations_highlight_overridden_form_fields(&$form_array, 
           case 'strongarm':
             // For Strongarm, we can deduce the Feature which is doing the
             // overriding, and whether the value has been overridden already.
-            $message = 'This field is disabled because this setting is overridden by the %module_name Feature. The value in code is %value.';
+//            $message = 'This field is disabled because this setting is overridden by the %module_name Feature. The value in code is %value.';
+            $message = 'This field is disabled because this setting is overridden by the %module_name Feature.';
             if (isset($overridden_variables_data[$form_child_element])) {
               if (isset($overridden_variables_data[$form_child_element]->export_module)) {
                 $variables['%module_name'] = $overridden_variables_data[$form_child_element]->export_module;
               }
+
               if (isset($overridden_variables_data[$form_child_element]->value)) {
                 $variables['%value'] = $overridden_variables_data[$form_child_element]->value;
               }
+
               if (isset($overridden_variables_data[$form_child_element]->type)) {
                 $variables['%status'] = $overridden_variables_data[$form_child_element]->type;
               }

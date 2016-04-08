@@ -285,8 +285,8 @@ function greyhead_customisations_form_alter(&$form, $form_state, $form_id) {
         }
       }
 
-      drupal_set_message(t('Some less-used Features on this page have been hidden to reduce clutter on this page. !settings_link.', array(
-        '!settings_link' => l(t('You can change which features groups are hidden on this page'), 'admin/config/four-customisations'),
+      drupal_set_message(t('Some less-frequently-used Features on this page have been hidden to reduce clutter. !settings_link.', array(
+        '!settings_link' => l(t('You can choose which groups are hidden here'), 'admin/config/four-customisations'),
       )), 'status', FALSE);
     }
   }
