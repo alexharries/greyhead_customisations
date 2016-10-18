@@ -635,7 +635,7 @@ function greyhead_customisations_add_favicons($path_to_icons, $apple_icon_sizes)
       '#tag' => 'link',
       '#attributes' => array(
         'href' => file_create_url($path_to_icons . '/apple-touch-icon-' . $size . 'x' . $size . '.png'),
-        'rel' => 'apple-touch-icon-precomposed',
+        'rel' => 'apple-touch-icon',
         'sizes' => $size . 'x' . $size,
       ),
     );
